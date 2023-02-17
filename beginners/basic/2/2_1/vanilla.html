@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 리액트를 적용 시키기 전에 js로 만드는 + 증가 시키기-->
+    <span class="totalCount">Total Count : 0 </span>
+    <button class="plusBtn">+</button>
+    <script>
+      let counter = 0;
+      const count = document.querySelector(".totalCount");
+      const btn = document.querySelector(".plusBtn");
+      function handleClick() {
+        count.innerText = `Total Count : ${counter++}`;
+      }
+      btn.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
