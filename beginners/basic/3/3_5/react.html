@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type = "text/babel">
+      const root = document.querySelector(".root");
+
+      //JSX에서는 요소에서 class를 className이라고, for를 htmlFor이라고 써야한다.
+      const App = () =>{
+        const [minutes, setMinutes] = React.useState();
+        const onChangeMinutes = (event) => {
+          setMinutes(event.target.value);
+        };
+        return  (
+          <div>
+            <h1 className="converter">최강 변환기</h1>
+            <label htmlFor="hours">시 : </label>
+            <input id="hours" placeholder = "시" type = "number" value={minutes} onChange ={onChangeMinutes}/>
+            <h4> 너가 변환하고 싶은 값은 {minutes}</h4>
+
+            <label htmlFor="minutes">분 :</label>
+            <input id="minutes" placeholder = "분" type = "number"/>
+            </div>
+          );
+            
+        }
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
